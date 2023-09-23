@@ -1,0 +1,73 @@
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Bem vindo. Gostaria de jogar pedra, papel e tesoura?");
+		string escolha = Console.ReadLine();
+		while (escolha != "Sim" && escolha != "Não" && escolha != "sim" && escolha != "não")
+		{
+			Console.WriteLine("Não entendi sua resposta. Gostaria de jogar pedra, papel e tesoura?");
+			escolha = Console.ReadLine();
+		}
+
+		if (escolha == "Não" || escolha == "não")
+		{
+			Console.WriteLine("Ah, que pena. Adeus.");
+		}
+		else if (escolha == "Sim" || escolha == "sim")
+		{
+			Console.WriteLine("Muito bem. Faça sua escolha, e eu farei a minha.");
+			Console.WriteLine("1 = Pedra");
+			Console.WriteLine("2 = Papel");
+			Console.WriteLine("3 = Tesoura");
+			int jogadorMovimento = Convert.ToInt32(Console.ReadLine());
+			while (jogadorMovimento != 1 && jogadorMovimento != 2 && jogadorMovimento != 3)
+			{
+				Console.WriteLine("Escolha inválida. Faça sua escolha, e eu farei a minha.");
+				Console.WriteLine("1 = Pedra");
+				Console.WriteLine("2 = Papel");
+				Console.WriteLine("3 = Tesoura");
+				jogadorMovimento = Convert.ToInt32(Console.ReadLine());
+			}
+
+			Random rnd = new Random();
+			int maquinaMovimento = rnd.Next(1, 3);
+			if (maquinaMovimento == 1 && jogadorMovimento == 1)
+			{
+				Console.WriteLine("Você jogou pedra e eu joguei pedra. Empatamos.");
+			}
+			else if (maquinaMovimento == 1 && jogadorMovimento == 2)
+			{
+				Console.WriteLine("Você jogou papel e eu joguei pedra. Droga, você ganhou...");
+			}
+			else if (maquinaMovimento == 1 && jogadorMovimento == 3)
+			{
+				Console.WriteLine("Você jogou tesoura e eu joguei pedra. Oba, eu ganhei!");
+			}
+			else if (maquinaMovimento == 2 && jogadorMovimento == 1)
+			{
+				Console.WriteLine("Você jogou pedra e eu joguei papel. Oba, eu ganhei!");
+			}
+			else if (maquinaMovimento == 2 && jogadorMovimento == 2)
+			{
+				Console.WriteLine("Você jogou papel e eu joguei papel. Empatamos.");
+			}
+			else if (maquinaMovimento == 2 && jogadorMovimento == 3)
+			{
+				Console.WriteLine("Você jogou tesoura e eu joguei papel. Droga, você ganhou...");
+			}
+			else if (maquinaMovimento == 3 && jogadorMovimento == 1)
+			{
+				Console.WriteLine("Você jogou pedra e eu joguei tesoura. Droga, você ganhou...");
+			}
+			else if (maquinaMovimento == 3 && jogadorMovimento == 2)
+			{
+				Console.WriteLine("Você jogou papel e eu joguei tesoura. Oba, eu ganhei!");
+			}
+			else if (maquinaMovimento == 3 && jogadorMovimento == 3)
+			{
+				Console.WriteLine("Você jogou tesoura e eu joguei tesoura. Empatamos.");
+			}
+		}
+	}
+}
