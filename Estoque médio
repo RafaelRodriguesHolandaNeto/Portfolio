@@ -1,5 +1,5 @@
 //Faça um programa para calcular o estoque médio de uma peça, sendo que:
-//ESTOQUE MÉDIO = (QUANTIDADE_MÍNIMA + QUANTIDADE_MÁXIMA) / 2. 
+//estoqueMedio = (estoqueMin + estoqueMax) / 2. 
 
 public class Program
 {
@@ -7,15 +7,18 @@ public class Program
 	{
 		int estoqueMin;
 		int estoqueMax;
+
 		Console.WriteLine("Insira o estoque mínimo");
 		estoqueMin = Convert.ToInt32(Console.ReadLine());
+
 		Console.WriteLine("Insira o estoque máximo");
 		estoqueMax = Convert.ToInt32(Console.ReadLine());
-		while (estoqueMax <= estoqueMin)
-		{
-		Console.WriteLine("Insira o estoque máximo");
-		estoqueMax = Convert.ToInt32(Console.ReadLine());
-		}
+		 while (estoqueMax <= estoqueMin)
+		 {
+		  Console.WriteLine("Insira o estoque máximo");
+		  estoqueMax = Convert.ToInt32(Console.ReadLine());
+		 }
+
 		int estoqueMedio = (estoqueMin + estoqueMax)/2;
 		Console.WriteLine("Estoque médio: " + estoqueMedio);
 		
